@@ -1,0 +1,1787 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1) Python Basics - Data Science Part Time Cohort 21\n",
+    "\n",
+    "* *Description - Phase1 Notebook -Python Introduction*\n",
+    "* *Author - Jithin J Kumar*\n",
+    "* *Date - 15-03-2019*\n",
+    "\n",
+    "## Prerequisites\n",
+    "Python-3 Installed in the system\n",
+    "Jupyter Lab Installed in the system\n",
+    "\n",
+    "## References\n",
+    "**Youtube Playlists**\n",
+    "Python Crash Course - https://www.youtube.com/watch?v=JJmcL1N2KQs&t=1607s\n",
+    "Python Youtube Playlist - https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7\n",
+    "**Books**\n",
+    "Books - https://www.math.ru.nl/~bosma/onderwijs/najaar09/thinkpython.pdf"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1) Comments, Variables & Datatypes"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Variable Rules :\n",
+    "* Variable names are case sensitive (name and NAME are different variables)\n",
+    "* Must start with a letter or an underscore\n",
+    "* Can have numbers but can not start with one"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This is a comment\n",
+    "x = 1           # int\n",
+    "y = 2.5         # float\n",
+    "name = 'John'   # str\n",
+    "is_cool = True  # bool"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1 2.5 John True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Multiple assignment\n",
+    "x, y, name, is_cool = (1, 2.5, 'John', True)\n",
+    "print(x,y,name,is_cool)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3.5"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Basic math\n",
+    "a = x + y\n",
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Value of x is : 1  and is of the type <class 'str'>\n",
+      "Value of y is : 2  and is of the type <class 'int'>\n",
+      "Value of z is : 2.0  and is of the type <class 'float'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Casting\n",
+    "x = str(x)\n",
+    "y = int(y)\n",
+    "z = float(y)\n",
+    "\n",
+    "print(\"Value of x is :\",x,\" and is of the type\",type(x))\n",
+    "print(\"Value of y is :\",y,\" and is of the type\",type(y))\n",
+    "print(\"Value of z is :\",z,\" and is of the type\",type(z))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2) Lists"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A List is a collection which is ordered and changeable. Allows duplicate members."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Value of numbers is : [1, 2, 3, 4, 5]  and is of the type <class 'list'>\n",
+      "Value of fruits is : ['Apples', 'Oranges', 'Grapes', 'Pears']  and is of the type <class 'list'>\n",
+      "Value of numbers2 is : [1, 2, 3, 4, 5]  and is of the type <class 'list'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Create list\n",
+    "numbers = [1, 2, 3, 4, 5]\n",
+    "fruits = ['Apples', 'Oranges', 'Grapes', 'Pears']\n",
+    "\n",
+    "numbers2 = list((1, 2, 3, 4, 5))\n",
+    "\n",
+    "print(\"Value of numbers is :\",numbers,\" and is of the type\",type(numbers))\n",
+    "print(\"Value of fruits is :\",fruits,\" and is of the type\",type(fruits))\n",
+    "print(\"Value of numbers2 is :\",numbers2,\" and is of the type\",type(numbers2))\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Oranges\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get a value\n",
+    "print(fruits[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get length\n",
+    "print(len(fruits))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Apples', 'Oranges', 'Grapes', 'Pears', 'Mangos', 'Mangos']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Append to list\n",
+    "fruits.append('Mangoes')\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Apples', 'Oranges', 'Pears', 'Mangos', 'Mangos']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Remove from list\n",
+    "fruits.remove('Grapes')\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Apples', 'Oranges', 'Strawberries', 'Pears', 'Mangos', 'Mangos']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Insert into position\n",
+    "fruits.insert(2, 'Strawberries')\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Blueberries', 'Oranges', 'Strawberries', 'Pears', 'Mangos', 'Mangos']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Change value\n",
+    "fruits[0] = 'Blueberries'\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Blueberries', 'Oranges', 'Pears', 'Mangos', 'Mangos']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Remove with pop\n",
+    "fruits.pop(2)\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Mangos', 'Mangos', 'Pears', 'Oranges', 'Blueberries']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Reverse list\n",
+    "fruits.reverse()\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Blueberries', 'Mangos', 'Mangos', 'Oranges', 'Pears']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Sort list\n",
+    "fruits.sort()\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Pears', 'Oranges', 'Mangos', 'Mangos', 'Blueberries']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Reverse sort\n",
+    "fruits.sort(reverse=True)\n",
+    "print(fruits)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3) Tuples_sets"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A Tuple is a collection which is ordered and unchangeable. Allows duplicate members."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create tuple\n",
+    "fruits = ('Apples', 'Oranges', 'Grapes')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Using a constructor\n",
+    "fruits2 = tuple(('Apples', 'Oranges', 'Grapes'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Value of fruits is : ('Apples', 'Oranges', 'Grapes')  and is of the type <class 'tuple'>\n",
+      "Value of fruits2 is : ('Apples', 'Oranges', 'Grapes')  and is of the type <class 'tuple'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Value of fruits is :\",fruits,\" and is of the type\",type(fruits))\n",
+    "print(\"Value of fruits2 is :\",fruits2,\" and is of the type\",type(fruits2))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Value of fruitsNew is : Apples  and is of the type <class 'str'>\n",
+      "Value of fruitsNew is : ('Apples',)  and is of the type <class 'tuple'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "fruitsNew = ('Apples')\n",
+    "print(\"Value of fruitsNew is :\",fruitsNew,\" and is of the type\",type(fruitsNew))\n",
+    "\n",
+    "# Single value needs trailing comma\n",
+    "fruitsNew = ('Apples',)\n",
+    "print(\"Value of fruitsNew is :\",fruitsNew,\" and is of the type\",type(fruitsNew))\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Oranges\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get value\n",
+    "print(fruits[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'tuple' object does not support item assignment",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-49-22c8ec75e542>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Can't change value\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mfruits\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m0\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m'Pears'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m: 'tuple' object does not support item assignment"
+     ]
+    }
+   ],
+   "source": [
+    "# Can't change value\n",
+    "fruits[0] = 'Pears'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Delete tuple\n",
+    "del fruits2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get length\n",
+    "print(len(fruits))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* Set - A Set is a collection which is unordered and unindexed. No duplicate members."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 70,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create set\n",
+    "fruits_set = {'Apples', 'Oranges', 'Mango'}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Check if in set\n",
+    "print('Apples' in fruits_set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Apples', 'Oranges', 'Grape', 'Mango'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Add to set\n",
+    "fruits_set.add('Grape')\n",
+    "print(fruits_set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Apples', 'Oranges', 'Mango'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Remove from set\n",
+    "fruits_set.remove('Grape')\n",
+    "print(fruits_set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Apples', 'Oranges', 'Mango'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Add duplicate\n",
+    "fruits_set.add('Apples')\n",
+    "print(fruits_set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 75,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "set()\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Clear set\n",
+    "fruits_set.clear()\n",
+    "print(fruits_set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'fruits_set' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-76-103d4c9b8f2a>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Delete\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;32mdel\u001b[0m \u001b[0mfruits_set\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfruits_set\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m: name 'fruits_set' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "# Delete\n",
+    "del fruits_set\n",
+    "print(fruits_set)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 4) Dictionaries"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A Dictionary is a collection which is unordered, changeable and indexed. No duplicate members."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 78,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create dict\n",
+    "person = {\n",
+    "    'first_name': 'John',\n",
+    "    'last_name': 'Doe',\n",
+    "    'age': 30\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 80,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Use constructor\n",
+    "person2 = dict(first_name='Sara', last_name='Williams')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "John\n",
+      "Doe\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get value\n",
+    "print(person['first_name'])\n",
+    "print(person.get('last_name'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Add key/value\n",
+    "person['phone'] = '555-555-5555'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "dict_keys(['first_name', 'last_name', 'age', 'phone'])\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get dict keys\n",
+    "print(person.keys())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "dict_items([('first_name', 'John'), ('last_name', 'Doe'), ('age', 30), ('phone', '555-555-5555')])\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get dict items\n",
+    "print(person.items())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Copy dict\n",
+    "person2 = person.copy()\n",
+    "person2['city'] = 'Boston'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'555-555-5555'"
+      ]
+     },
+     "execution_count": 87,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Remove item\n",
+    "del(person['age'])\n",
+    "person.pop('phone')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 88,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Clear\n",
+    "person.clear()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 89,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get length\n",
+    "print(len(person2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 90,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# List of dict\n",
+    "people = [\n",
+    "    {'name': 'Martha', 'age': 30},\n",
+    "    {'name': 'Kevin', 'age': 25}\n",
+    "]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 91,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Kevin\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(people[1]['name'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5) Functions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A function is a block of code which only runs when it is called. In Python, we do not use curly brackets, we use indentation with tabs or spaces\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 95,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello Sam\n",
+      "Hello jithin\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Create function\n",
+    "def sayHello(name='Sam'):\n",
+    "    print(f'Hello {name}')\n",
+    "\n",
+    "sayHello()\n",
+    "sayHello('jithin')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 97,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4"
+      ]
+     },
+     "execution_count": 97,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Return values\n",
+    "def getSum(num1, num2):\n",
+    "    total = num1 + num2\n",
+    "    return total\n",
+    "getSum(1,3)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A lambda function is a small anonymous function."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 103,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 103,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "getSumAgain = lambda num1, num2: num1 + num2\n",
+    "getSumAgain(3,5)\n",
+    "getSumAgain(2,5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 6) Conditionals"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* If/ Else conditions are used to decide to do something based on something being true or false\n",
+    "\n",
+    "* Comparison Operators (==, !=, >, <, >=, <=) - Used to compare values"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 105,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 21\n",
+    "y = 20"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 106,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21 is greater than 20\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Simple if\n",
+    "if x > y:\n",
+    "  print(f'{x} is greater than {y}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 109,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21 is greater than 20\n"
+     ]
+    }
+   ],
+   "source": [
+    "# If/else\n",
+    "if y < x:\n",
+    "  print(f'{x} is greater than {y}')\n",
+    "else:\n",
+    "  print(f'{y} is greater than {x}') "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 112,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21 is equal to 21\n"
+     ]
+    }
+   ],
+   "source": [
+    "y=21\n",
+    "# elif\n",
+    "if x > y:\n",
+    "  print(f'{x} is greater than {y}')\n",
+    "elif x == y:\n",
+    "  print(f'{x} is equal to {y}')  \n",
+    "else:\n",
+    "  print(f'{y} is greater than {x}') "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 114,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "8 is greater than 2 and less than or equal to 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Nested if\n",
+    "x=8\n",
+    "if x > 2:\n",
+    "  if x <= 10:\n",
+    "    print(f'{x} is greater than 2 and less than or equal to 10')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* Logical operators (and, or, not) - Used to combine conditional statements"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 115,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "8 is greater than 2 and less than or equal to 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "# and\n",
+    "if x > 2 and x <= 10:\n",
+    "    print(f'{x} is greater than 2 and less than or equal to 10')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 116,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "8 is greater than 2 or less than or equal to 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "# or\n",
+    "if x > 2 or x <= 10:\n",
+    "    print(f'{x} is greater than 2 or less than or equal to 10')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 117,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "8 is not equal to 21\n"
+     ]
+    }
+   ],
+   "source": [
+    "# not\n",
+    "if not(x == y):\n",
+    "  print(f'{x} is not equal to {y}')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* Membership Operators (not, not in) - Membership operators are used to test if a sequence is presented in an object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 118,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "numbers = [1,2,3,4,5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 119,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#  in\n",
+    "if x in numbers:\n",
+    "  print(x in numbers)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 120,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# not in\n",
+    "if x not in numbers:\n",
+    "  print(x not in numbers)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* Identity Operators (is, is not) - Compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 127,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "x=10\n",
+    "y=10\n",
+    "# is\n",
+    "if x is y:\n",
+    "  print(x is y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 130,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# is not\n",
+    "x=20/2\n",
+    "if x is not y:\n",
+    "  print(x is not y)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 7) Loops"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 132,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "people = ['John', 'Paul', 'Sara', 'Susan']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 133,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current Person: John\n",
+      "Current Person: Paul\n",
+      "Current Person: Sara\n",
+      "Current Person: Susan\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Simple for loop\n",
+    "for person in people:\n",
+    "  print(f'Current Person: {person}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 134,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current Person: John\n",
+      "Current Person: Paul\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Break\n",
+    "for person in people:\n",
+    "  if person == 'Sara':\n",
+    "    break\n",
+    "  print(f'Current Person: {person}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 135,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current Person: John\n",
+      "Current Person: Paul\n",
+      "Current Person: Susan\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Continue\n",
+    "for person in people:\n",
+    "  if person == 'Sara':\n",
+    "    continue\n",
+    "  print(f'Current Person: {person}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 136,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "John\n",
+      "Paul\n",
+      "Sara\n",
+      "Susan\n"
+     ]
+    }
+   ],
+   "source": [
+    "# range\n",
+    "for i in range(len(people)):\n",
+    "  print(people[i])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 137,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Number: 0\n",
+      "Number: 1\n",
+      "Number: 2\n",
+      "Number: 3\n",
+      "Number: 4\n",
+      "Number: 5\n",
+      "Number: 6\n",
+      "Number: 7\n",
+      "Number: 8\n",
+      "Number: 9\n",
+      "Number: 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(0, 11):\n",
+    "  print(f'Number: {i}')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* While loops execute a set of statements as long as a condition is true."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 138,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Count: 0\n",
+      "Count: 1\n",
+      "Count: 2\n",
+      "Count: 3\n",
+      "Count: 4\n",
+      "Count: 5\n",
+      "Count: 6\n",
+      "Count: 7\n",
+      "Count: 8\n",
+      "Count: 9\n"
+     ]
+    }
+   ],
+   "source": [
+    "count = 0\n",
+    "while count < 10:\n",
+    "  print(f'Count: {count}')\n",
+    "  count += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 8) Modules"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A module is basically a file containing a set of functions to include in your application. There are core python modules, modules you can install using the pip package manager (including Django) as well as custom modules"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 141,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Core modules\n",
+    "import datetime\n",
+    "from datetime import date\n",
+    "import time\n",
+    "from time import time"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 144,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'camelcase'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-144-6cbf97d32028>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Pip module pip install CamelCase\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0;32mfrom\u001b[0m \u001b[0mcamelcase\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mCamelCase\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'camelcase'"
+     ]
+    }
+   ],
+   "source": [
+    "# Pip module pip install CamelCase\n",
+    "from camelcase import CamelCase"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 147,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2019-03-15\n",
+      "1552657499.645344\n"
+     ]
+    }
+   ],
+   "source": [
+    "# today = datetime.date.today()\n",
+    "today = date.today()\n",
+    "timestamp = time()\n",
+    "print(today)\n",
+    "print(timestamp)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 9) Classes"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* A class is like a blueprint for creating objects. An object has properties and methods(functions) associated with it. Almost everything in Python is an object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 150,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create class\n",
+    "class User:\n",
+    "  # Constructor\n",
+    "  def __init__(self, name, email, age):\n",
+    "    self.name = name\n",
+    "    self.email = email\n",
+    "    self.age = age\n",
+    "\n",
+    "  def greeting(self):\n",
+    "    return f'My name is {self.name} and I am {self.age}'\n",
+    "\n",
+    "  def has_birthday(self):\n",
+    "    self.age += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 151,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Extend class\n",
+    "class Customer(User):\n",
+    "  # Constructor\n",
+    "  def __init__(self, name, email, age):\n",
+    "    self.name = name\n",
+    "    self.email = email\n",
+    "    self.age = age\n",
+    "    self.balance = 0\n",
+    "\n",
+    "  def set_balance(self, balance):\n",
+    "    self.balance = balance\n",
+    "\n",
+    "  def greeting(self):\n",
+    "    return f'My name is {self.name} and I am {self.age} and my balance is {self.balance}'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 152,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#  Init user object\n",
+    "brad = User('Brad Traversy', 'brad@gmail.com', 37)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 153,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Init customer object\n",
+    "janet = Customer('Janet Johnson', 'janet@yahoo.com', 25)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 154,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "My name is Janet Johnson and I am 25 and my balance is 500\n"
+     ]
+    }
+   ],
+   "source": [
+    "janet.set_balance(500)\n",
+    "print(janet.greeting())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 156,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "My name is Brad Traversy and I am 38\n"
+     ]
+    }
+   ],
+   "source": [
+    "brad.has_birthday()\n",
+    "print(brad.greeting())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 10) Working with Files"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* Python has functions for creating, reading, updating, and deleting files."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 158,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Open a file\n",
+    "myFile = open('myfile.txt', 'w')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 159,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Name:  myfile.txt\n",
+      "Is Closed :  False\n",
+      "Opening Mode:  w\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Get some info\n",
+    "print('Name: ', myFile.name)\n",
+    "print('Is Closed : ', myFile.closed)\n",
+    "print('Opening Mode: ', myFile.mode)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 160,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Write to file\n",
+    "myFile.write('I love Python')\n",
+    "myFile.write(' and JavaScript')\n",
+    "myFile.close()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 161,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Append to file\n",
+    "myFile = open('myfile.txt', 'a')\n",
+    "myFile.write(' I also like PHP')\n",
+    "myFile.close()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 162,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "I love Python and JavaScript I also like PHP\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Read from file\n",
+    "myFile = open('myfile.txt', 'r+')\n",
+    "text = myFile.read(100)\n",
+    "print(text)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 11) Working with JSON files"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* JSON is commonly used with data APIS. Here how we can parse JSON into a Python dictionary"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 164,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import json"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 165,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#  Sample JSON\n",
+    "userJSON = '{\"first_name\": \"John\", \"last_name\": \"Doe\", \"age\": 30}'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 166,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Parse to dict\n",
+    "user = json.loads(userJSON)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 167,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'first_name': 'John', 'last_name': 'Doe', 'age': 30}\n",
+      "John\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(user)\n",
+    "print(user['first_name'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 168,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "car = {'make': 'Ford', 'model': 'Mustang', 'year': 1970}\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 169,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "carJSON = json.dumps(car)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 170,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{\"make\": \"Ford\", \"model\": \"Mustang\", \"year\": 1970}\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(carJSON)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### **--End of Explanation--**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Exercises & Assignments\n",
+    "\n",
+    "1) Please try to complete all the exercises in the following website \n",
+    "https://codingbat.com/python\n",
+    "\n",
+    "2) A Json File is provided in the github repo named 'arsenal.json'. It is a twitter feed extracted from Twitter using Tweepy API.\n",
+    "* Load the Json File in Jupyter notebook\n",
+    "* Identify the number of tweets in the file.\n",
+    "* Identify how to extract details of an individual tweet like User Name, Screen Name, TimeZone etc.\n",
+    "* Try to find out hashtags associated with a tweet.\n",
+    "\n",
+    "3) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
